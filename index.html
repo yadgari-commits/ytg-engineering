@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0b1220">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <title>YTG Engineering — Yadgari Trading Group</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <!-- Loading screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loader"></div>
+        <h2 class="loading-title">YTG Engineering</h2>
+        <p class="loading-sub">Yadgari Trading Group</p>
+        <p class="loading-version">v4.0 — Loading modules...</p>
+    </div>
+
+    <!-- App shell -->
+    <div id="app" class="app-shell hidden">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <button class="icon-btn" id="menuBtn" aria-label="Menu">
+                    <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+                </button>
+                <div class="brand">
+                    <span class="brand-icon">YTG</span>
+                    <span class="brand-text">YTG Engineering <small>Yadgari Trading Group</small></span>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="icon-btn" id="themeBtn" aria-label="Theme" title="Toggle theme">
+                    <svg id="themeIcon" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 3a9 9 0 109 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 01-4.4 2.26 5.403 5.403 0 01-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+                </button>
+                <button class="icon-btn" id="historyBtn" aria-label="History" title="History">
+                    <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M13 3a9 9 0 00-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.954 8.954 0 0013 21a9 9 0 000-18zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/></svg>
+                </button>
+                <button class="icon-btn" id="settingsBtn" aria-label="Settings" title="Settings">
+                    <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 00.12-.61l-1.92-3.32a.488.488 0 00-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 00-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 00-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Tab navigation -->
+        <nav class="tab-nav" id="tabNav">
+            <button class="tab-btn active" data-tab="basic">Basic</button>
+            <button class="tab-btn" data-tab="scientific">Scientific</button>
+            <button class="tab-btn" data-tab="civil">Civil</button>
+            <button class="tab-btn" data-tab="structural">Structural</button>
+            <button class="tab-btn" data-tab="geotech">Geotech</button>
+            <button class="tab-btn" data-tab="survey">Survey</button>
+            <button class="tab-btn" data-tab="electrical">Electrical</button>
+            <button class="tab-btn" data-tab="mechanical">Mechanical</button>
+            <button class="tab-btn" data-tab="hydraulic">Hydraulic</button>
+            <button class="tab-btn" data-tab="converter">Converter</button>
+            <button class="tab-btn" data-tab="formulas">Formulas</button>
+            <button class="tab-btn" data-tab="constants">Constants</button>
+        </nav>
+
+        <!-- Tab content panels -->
+        <main class="tab-content" id="tabContent">
+            <!-- Tabs are populated by JS -->
+        </main>
+
+        <!-- Bottom action bar (context-aware) -->
+        <div class="bottom-bar" id="bottomBar">
+            <button class="bb-btn" id="exportBtn">
+                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                <span>Export PDF</span>
+            </button>
+            <button class="bb-btn" id="shareBtn">
+                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+                <span>Share</span>
+            </button>
+            <button class="bb-btn" id="favBtn">
+                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <span>Favorite</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- History panel -->
+    <div id="historyPanel" class="side-panel">
+        <div class="panel-header">
+            <h3>History & Favorites</h3>
+            <button class="icon-btn" id="closeHistory">✕</button>
+        </div>
+        <div class="panel-search">
+            <input type="text" id="historySearch" placeholder="Search history...">
+        </div>
+        <div class="panel-tabs">
+            <button class="panel-tab active" data-ptab="history">History</button>
+            <button class="panel-tab" data-ptab="favorites">Favorites</button>
+        </div>
+        <div class="panel-list" id="historyList"></div>
+        <div class="panel-footer">
+            <button class="btn-ghost" id="clearHistory">Clear all</button>
+        </div>
+    </div>
+
+    <!-- Settings panel -->
+    <div id="settingsPanel" class="side-panel">
+        <div class="panel-header">
+            <h3>Settings</h3>
+            <button class="icon-btn" id="closeSettings">✕</button>
+        </div>
+        <div class="settings-list">
+            <div class="setting-row">
+                <span>Theme</span>
+                <select id="themeSelect">
+                    <option value="dark">Dark</option>
+                    <option value="light">Light</option>
+                    <option value="auto">Auto</option>
+                </select>
+            </div>
+            <div class="setting-row">
+                <span>Decimal places</span>
+                <select id="decimalsSelect">
+                    <option value="2">2</option>
+                    <option value="4" selected>4</option>
+                    <option value="6">6</option>
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <div class="setting-row">
+                <span>Angle unit</span>
+                <select id="angleSelect">
+                    <option value="deg">Degree</option>
+                    <option value="rad">Radian</option>
+                    <option value="grad">Gradian</option>
+                </select>
+            </div>
+            <div class="setting-row">
+                <span>Notation</span>
+                <select id="notationSelect">
+                    <option value="standard">Standard</option>
+                    <option value="scientific">Scientific</option>
+                    <option value="engineering">Engineering</option>
+                </select>
+            </div>
+            <div class="setting-row">
+                <span>Font size</span>
+                <select id="fontSelect">
+                    <option value="small">Small</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="large">Large</option>
+                </select>
+            </div>
+            <div class="setting-row">
+                <span>Sound feedback</span>
+                <label class="switch"><input type="checkbox" id="soundToggle"><span class="slider"></span></label>
+            </div>
+            <div class="setting-row">
+                <span>Haptic feedback</span>
+                <label class="switch"><input type="checkbox" id="hapticToggle" checked><span class="slider"></span></label>
+            </div>
+            <div class="setting-row">
+                <span>Language</span>
+                <select id="langSelect">
+                    <option value="en">English</option>
+                    <option value="fa" selected>دری / فارسی</option>
+                </select>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <p class="text-muted small">Engineering Calculation Center v5.0 — Offline Edition</p>
+        </div>
+    </div>
+
+    <!-- Toast container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Modal</h3>
+                <button class="icon-btn" id="modalClose">✕</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Scripts (all offline, no CDN) -->
+    <script src="js/utils.js"></script>
+    <script src="js/math.js"></script>
+    <script src="js/history.js"></script>
+    <script src="js/themes.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="data/constants.js"></script>
+    <script src="data/formulas-math-civil.js"></script>
+    <script src="data/formulas-geotech-survey.js"></script>
+    <script src="data/formulas-electrical-mech.js"></script>
+    <script src="data/formulas-conversions.js"></script>
+    <script src="data/formulas-extra.js"></script>
+    <script src="js/basic.js"></script>
+    <script src="js/scientific.js"></script>
+    <script src="js/civil.js"></script>
+    <script src="js/structural.js"></script>
+    <script src="js/geotech.js"></script>
+    <script src="js/survey.js"></script>
+    <script src="js/electrical.js"></script>
+    <script src="js/mechanical.js"></script>
+    <script src="js/hydraulic.js"></script>
+    <script src="js/converter.js"></script>
+    <script src="js/formula.js"></script>
+    <script src="js/constants-ui.js"></script>
+    <script src="js/tabs.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./sw.js').catch(()=>{});
+        });
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "YTG Engineering",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "YTG",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "id": "ff.yadgari@gmail.com"
+}
